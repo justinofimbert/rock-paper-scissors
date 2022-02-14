@@ -1,3 +1,7 @@
+game()
+
+console.log()
+
 function computerPlay() {
     let randomNumber = Math.floor(Math.random() * 3)
     if (randomNumber < 1) {
@@ -11,11 +15,11 @@ function computerPlay() {
     }
 }
 
-function outcome(playerSelection, computerSelection) {
+function roundOutcome(playerSelection, computerSelection) {
 
     if (playerSelection.toLowerCase() === computerSelection)
     {
-        return "Draw"
+        return "draw"
     }
     if (computerSelection === "rock") {
         if (playerSelection === "scissors") {
@@ -41,4 +45,26 @@ function outcome(playerSelection, computerSelection) {
             return "player wins"
         }
     }
+}
+
+function game() {
+    let playerWins = 0;
+    let computerWins = 0;
+    for (let i = 0; i < 5; i++) {
+        let outcome = roundOutcome((prompt("rock, paper or scissors?").toLowerCase()), computerPlay());
+        if (outcome === "draw") {
+            playerWins = ++playerWins;
+            computerWins = ++computerWins;
+            console.log("draw")
+        }
+        else if (outcome === "player wins") {
+            playerWins = ++playerWins;
+            console.log("player wins")
+        }
+        else {
+            computerWins = ++computerWins;
+            console.log("computer wins")
+        }
+    }
+    console.log(`\nplayer wins: ${playerWins}\ncomputer wins: ${computerWins}`)
 }
