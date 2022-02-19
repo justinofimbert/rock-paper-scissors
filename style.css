@@ -25,7 +25,12 @@ body {
     display: flex;
     background-color: #1f2937;
     flex: auto;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+#output {
+    margin: 16px 0 0 0;
+    color: aliceblue;
+}
