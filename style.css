@@ -25,5 +25,7 @@ body {
     display: flex;
     background-color: #1f2937;
     flex: auto;
+    justify-content: center;
+    align-items: center;
 }
 
